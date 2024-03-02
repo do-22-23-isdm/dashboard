@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  cache-and-install:
+  install_lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
