@@ -6,9 +6,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@shadcn/dropdown-menu";
-import { Button } from "@shadcn/button";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+} from '@shadcn/dropdown-menu';
+import { Button } from '@shadcn/button';
+import { Avatar, AvatarFallback } from './ui/avatar';
 
 type DropdownMenuData = {
   label: {
@@ -20,10 +20,10 @@ type DropdownMenuData = {
 
 const dropdownMenuData: DropdownMenuData = {
   label: {
-    name: "john.doe",
-    email: "john.doe@example.tld",
+    name: 'john.doe',
+    email: 'john.doe@example.tld',
   },
-  items: [{ label: "Profile" }, { label: "Settings" }],
+  items: [{ label: 'Profile' }, { label: 'Settings' }],
 };
 
 export function UserNav() {

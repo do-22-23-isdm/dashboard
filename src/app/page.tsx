@@ -1,9 +1,9 @@
-import { MainNav } from "@/components/main-nav";
-import { Sidebar } from "@/components/sidebar";
-import { UserNav } from "@/components/user-nav";
+import { MainNav } from '@/components/main-nav';
+import { Sidebar } from '@/components/sidebar';
+import { UserNav } from '@/components/user-nav';
 
 const content =
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut hic libero consequatur tenetur deleniti architecto laboriosam harum recusandae exercitationem, cumque dolorum, voluptatum animi sunt id distinctio assumenda quia. Expedita, inventore.";
+  'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut hic libero consequatur tenetur deleniti architecto laboriosam harum recusandae exercitationem, cumque dolorum, voluptatum animi sunt id distinctio assumenda quia. Expedita, inventore.';
 
 export default function Home() {
   return (
