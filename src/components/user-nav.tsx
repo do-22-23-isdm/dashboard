@@ -15,7 +15,7 @@ type DropdownMenuData = {
     name: string;
     email: string;
   };
-  items: { label: string; }[];
+  items: { label: string }[];
 };
 
 const dropdownMenuData: DropdownMenuData = {
@@ -23,10 +23,7 @@ const dropdownMenuData: DropdownMenuData = {
     name: "john.doe",
     email: "john.doe@example.tld",
   },
-  items: [
-    { label: "Profile" },
-    { label: "Settings" },
-  ],
+  items: [{ label: "Profile" }, { label: "Settings" }],
 };
 
 export function UserNav() {
@@ -52,14 +49,12 @@ export function UserNav() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-        {dropdownMenuData.items.map((item, i) => (
-          <DropdownMenuItem key={i}>{item.label}</DropdownMenuItem>
-        ))}
+          {dropdownMenuData.items.map((item, i) => (
+            <DropdownMenuItem key={i}>{item.label}</DropdownMenuItem>
+          ))}
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          Log out
-        </DropdownMenuItem>
+        <DropdownMenuItem>Log out</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
