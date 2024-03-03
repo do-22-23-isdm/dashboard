@@ -23,7 +23,7 @@ export function MainNav({ links, className, ...props }: Props) {
           className={cn(
             level === 'h1' && 'text-xl font-semibold',
             (level === undefined || level === 'h2') && 'text-md font-medium',
-            'transition-colors',
+            'transition-colors text-ghost hover:text-primary',
           )}
           key={i}
         >
