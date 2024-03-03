@@ -1,21 +1,35 @@
-import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { Button } from '@shadcn/button';
 
-export function MainNav({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLElement>) {
+type Props = {
+  links: {
+    title: string;
+    href: string;
+    level?: string; // hé by default
+  }[];
+} & React.HTMLAttributes<HTMLElement>;
+
+export function MainNav({ links, className, ...props }: Props) {
   return (
     <nav
-      className={cn('flex items-center space-x-4 lg:space-x-6', className)}
+      className={cn('flex items-center space-x-1 lg:space-x-3', className)}
       {...props}
     >
-      <Link
-        href="/"
-        className="text-sm font-medium transition-colors hover:text-primary"
-      >
-        Home
-      </Link>
+      {links.map(({ level, title, href }, i) => (
+        <Button
+          variant="link"
+          asChild
+          className={cn(
+            level === 'h1' && 'text-xl font-semibold',
+            (level === undefined || level === 'h2') && 'text-md font-medium',
+            'transition-colors',
+          )}
+          key={i}
+        >
+          <Link href={href}>{title}</Link>
+        </Button>
+      ))}
     </nav>
   );
 }
