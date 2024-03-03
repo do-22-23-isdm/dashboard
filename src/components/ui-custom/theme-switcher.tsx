@@ -7,8 +7,8 @@ import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 
 export function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme();
-  const isDarkTheme = theme === 'dark';
+  const { resolvedTheme, setTheme } = useTheme();
+  const isDarkTheme = resolvedTheme === 'dark';
 
   return (
     <Button
