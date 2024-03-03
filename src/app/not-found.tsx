@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { Metadata } from 'next';
 import Link from 'next/link';
@@ -41,7 +41,7 @@ export default function NotFound() {
             <Button variant="outline" onClick={() => router.back()}>
               Go back
             </Button>
-            <Link href='/'>
+            <Link href="/">
               <Button>Go to Homepage</Button>
             </Link>
           </CardFooter>
