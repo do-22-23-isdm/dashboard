@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Topbar } from '@/components/topbar';
+import { ThemeProvider } from '@/components/providers/theme-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,10 +26,12 @@ export default function RootLayout({
           inter.className,
         )}
       >
-        <div className="flex min-h-screen flex-col">
-          <Topbar />
-          <main className="flex-1 flex">{children}</main>
-        </div>
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <div className="flex min-h-screen flex-col">
+            <Topbar />
+            <main className="flex-1 flex">{children}</main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
