@@ -35,9 +35,9 @@ export default function NotFound() {
           <Button variant="outline" onClick={() => router.back()}>
             Go back
           </Button>
-          <Link href="/">
-            <Button>Go to Homepage</Button>
-          </Link>
+          <Button asChild>
+            <Link href="/">Go to Homepage</Link>
+          </Button>
         </CardFooter>
       </Card>
     </div>
