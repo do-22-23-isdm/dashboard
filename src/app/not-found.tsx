@@ -4,14 +4,14 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Topbar } from '@/components/topbar';
-import { Button } from '@/components/ui/button';
+import { Button } from '@shadcn/button';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from '@shadcn/card';
 
 export const metadata: Metadata = {
   title: 'Page not found | Dashboard',
