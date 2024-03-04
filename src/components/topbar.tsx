@@ -1,7 +1,7 @@
-import { MainNav } from '@/components/navigation/main-nav';
-import { UserNav } from '@/components/navigation/user-nav';
 import { cn } from '@/lib/utils';
-import { ThemeSwitcher } from './ui-custom/theme-switcher';
+import { MainNav } from '@@/navigation/main-nav';
+import { UserNav } from '@@/navigation/user-nav';
+import { ThemeSwitcher } from '@@/ui-custom/theme-switcher';
 
 type TopbarProps = {} & React.HTMLAttributes<HTMLDivElement>;
 
