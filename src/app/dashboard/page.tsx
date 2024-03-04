@@ -1,4 +1,4 @@
-import { Header } from '@/components/ui-custom/header';
+import { Header } from '@@/ui-custom/header';
 import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/card';
 import { Separator } from '@shadcn/separator';
 
