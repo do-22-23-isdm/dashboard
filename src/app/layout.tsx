@@ -8,8 +8,8 @@ import { ThemeProvider } from '@@/providers/theme-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Dashboard',
-  description: 'Dashboard for ISDM MESO@LR',
+  title: 'Homepage - MESO@LR',
+  description: 'Homepage for ISDM MESO@LR',
 };
 
 export default function RootLayout({

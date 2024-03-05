@@ -1,4 +1,10 @@
 import { Sidebar } from '@@/sidebar';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Dashboard - MESO@LR',
+  description: 'Dashboard page for ISDM MESO@LR',
+};
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
