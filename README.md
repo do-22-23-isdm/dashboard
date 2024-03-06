@@ -29,3 +29,4 @@ Open [http://localhost:3000](http://localhost:3000).
 - [`hook-form`](https://github.com/react-hook-form/react-hook-form) & [`zod`](https://github.com/colinhacks/zod)
 - state management?
 - data fetching? ([`swr`](https://swr.vercel.app/)?)
+- [next-intl](https://github.com/amannn/next-intl): i18n
