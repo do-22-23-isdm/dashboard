@@ -1,24 +1,44 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { Button } from '@shadcn/button';
-import { Apple } from 'lucide-react';
+import { LayoutDashboard } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-type SidebarProps = {} & React.HTMLAttributes<HTMLDivElement>;
+const sidebarLinks = [
+  {
+    title: 'Overview',
+    href: '/dashboard',
+    icon: <LayoutDashboard />,
+  },
+];
 
-export function Sidebar({ className }: SidebarProps) {
+export function Sidebar({ className }: React.HTMLAttributes<HTMLDivElement>) {
+  const pathname = usePathname();
+
   return (
     <div className={cn('pb-12', className)}>
       <div className="space-y-4 py-4">
         <div className="px-3 py-2">
-          <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
-            Lorem Ipsum
-          </h2>
-          <div className="space-y-1">
-            <Button variant="secondary" className="w-full justify-start gap-2">
-              <Apple />
-              <span>button</span>
-            </Button>
+          {/* <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
+            Features
+          </h2> */}
 
-            {/* other links */}
+          <div className="space-y-1">
+            {sidebarLinks.map(({ title, href, icon }, i) => (
+              <Button
+                key={i}
+                variant={pathname === href ? 'secondary' : 'ghost'}
+                className="w-full justify-start gap-2"
+                asChild
+              >
+                <Link href={href}>
+                  {icon}
+                  {title}
+                </Link>
+              </Button>
+            ))}
           </div>
         </div>
 

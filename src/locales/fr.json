@@ -1,0 +1,13 @@
+{
+  "Metadata": {
+    "appTitle": "MESO@LR"
+  },
+  "Homepage": {
+    "title": "Accueil",
+    "description": "Accueil pour l'ISDM MESO@LR"
+  },
+  "Dashboard": {
+    "title": "Tableau de bord",
+    "description": "Tableau de bord pour l'ISDM MESO@LR"
+  }
+}
