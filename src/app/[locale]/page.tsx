@@ -32,7 +32,7 @@ export default function Home() {
           <Button
             asChild
             variant="outline"
-            className="text-lg font-black p-6 space-x-2"
+            className="text-lg font-bold p-6 space-x-2"
           >
             <a href="https://meso-lr.umontpellier.fr/" target="_blank">
               <ArrowUpRightFromSquare />

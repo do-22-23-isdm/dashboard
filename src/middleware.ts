@@ -1,8 +1,8 @@
 import createMiddleware from 'next-intl/middleware';
 
 export default createMiddleware({
-  locales: ['en', 'fr'],
   defaultLocale: 'en',
+  locales: ['en', 'fr'],
   // See: https://next-intl-docs.vercel.app/docs/routing/middleware#locale-prefix-never
   localePrefix: 'never',
 });

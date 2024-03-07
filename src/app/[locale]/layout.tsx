@@ -1,24 +1,29 @@
-import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import { Inter } from 'next/font/google';
-import './globals.css';
+import '../globals.css';
 import { cn } from '@/lib/utils';
 import { Topbar } from '@@/topbar';
 import { ThemeProvider } from '@@/providers/theme-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: 'Homepage - MESO@LR',
-  description: 'Homepage for ISDM MESO@LR',
+export async function generateMetadata() {
+  const t = await getTranslations();
+
+  return {
+    title: `${t('Homepage.title')} - ${t('Metadata.appTitle')}`,
+    description: t('Homepage.description'),
+  };
+}
+
+type Props = {
+  children: React.ReactNode;
+  params: { locale: string };
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children, params: { locale } }: Props) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head />
       <body
         className={cn(

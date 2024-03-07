@@ -1,10 +1,14 @@
+import { getTranslations } from 'next-intl/server';
 import { Sidebar } from '@@/sidebar';
-import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Dashboard - MESO@LR',
-  description: 'Dashboard page for ISDM MESO@LR',
-};
+export async function generateMetadata() {
+  const t = await getTranslations();
+
+  return {
+    title: `${t('Dashboard.title')} - ${t('Metadata.appTitle')}`,
+    description: t('Dashboard.description'),
+  };
+}
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -13,8 +13,8 @@ import {
 } from '@shadcn/card';
 
 export const metadata: Metadata = {
-  title: 'Page not found | Dashboard',
-  description: 'Dashboard for ISDM MESO@LR',
+  title: 'Page not found',
+  description: 'Page not found - ISDM MESO@LR',
 };
 
 export default function NotFound() {
