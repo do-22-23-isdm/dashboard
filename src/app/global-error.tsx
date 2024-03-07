@@ -1,12 +1,19 @@
 'use client';
 
-import { Button } from '@shadcn/button';
-import { cn } from '@/lib/utils';
-import { Inter } from 'next/font/google';
-import { Card, CardFooter, CardHeader, CardTitle } from '@shadcn/card';
 import Link from 'next/link';
+import { Inter } from 'next/font/google';
+import { Button } from '@shadcn/button';
+import { Card, CardFooter, CardHeader, CardTitle } from '@shadcn/card';
+import { cn } from '@/lib/utils';
+import './globals.css';
+import { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: 'Unknown error',
+  description: 'Unknown error - ISDM MESO@LR',
+};
 
 export default function GlobalError({
   reset,

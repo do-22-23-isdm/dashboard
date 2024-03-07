@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <section className="container flex flex-wrap gap-8 items-center justify-between">
+    <section className="container flex flex-wrap items-center justify-between">
       <div className="space-y-8 text-left max-w-2xl">
         <h1 className="font-extrabold text-4xl/snug lg:text-5xl/snug">
           Welcome to your <br />
