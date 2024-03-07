@@ -1,12 +1,12 @@
 import { Button } from '@/components/ui/button';
-import { ArrowUpRightFromSquare, LogIn } from 'lucide-react';
+import { ArrowUpRightFromSquare, LayoutDashboard } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Home() {
   return (
-    <section className="container flex flex-wrap items-center justify-between">
-      <div className="space-y-8 text-left max-w-2xl">
+    <section className="container flex flex-wrap items-center justify-center xl:justify-between gap-4">
+      <div className="space-y-8 text-left max-w-xl">
         <h1 className="font-extrabold text-4xl/snug lg:text-5xl/snug">
           Welcome to your <br />
           <span className="tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
@@ -24,9 +24,10 @@ export default function Home() {
         </div>
         <div className="flex flex-col sm:flex-row gap-8 text-xl">
           <Button asChild className="text-lg font-bold p-6 space-x-2">
-            <Link href="/auth/login">
-              <LogIn />
-              <span>Log In</span>
+            {/* Replace with login button if not auth */}
+            <Link href="/dashboard">
+              <LayoutDashboard />
+              <span>Get started</span>
             </Link>
           </Button>
           <Button
@@ -46,7 +47,7 @@ export default function Home() {
         alt="Muse supercomputer at CINES"
         width={550}
         height={310}
-        className="border rounded-md shadow-md transition-transform ease duration-300 hover:-translate-y-2 hover:-translate-x-2"
+        className="border w-xs rounded-md shadow-md transition-transform ease duration-300 hover:-translate-y-2 hover:-translate-x-2"
         priority
       />
     </section>
