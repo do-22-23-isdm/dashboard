@@ -9,5 +9,9 @@
   "Dashboard": {
     "title": "Dashboard",
     "description": "Dashboard page for ISDM MESO@LR"
+  },
+  "Alertes": {
+    "title": "Alertes",
+    "description": "Alertes page for ISDM MESO@LR"
   }
 }

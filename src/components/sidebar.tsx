@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { Button } from '@shadcn/button';
-import { LayoutDashboard } from 'lucide-react';
+import { LayoutDashboard, AlarmCheckIcon } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -11,6 +11,11 @@ const sidebarLinks = [
     title: 'Overview',
     href: '/dashboard',
     icon: <LayoutDashboard />,
+  },
+  {
+    title: 'Alertes',
+    href: '/dashboard/alertes',
+    icon: <AlarmCheckIcon />,
   },
 ];
 
