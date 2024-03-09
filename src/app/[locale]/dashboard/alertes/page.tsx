@@ -29,7 +29,10 @@ export const listOfAlerts = [
 export default function AlertesView() {
   return (
     <>
-      <Header title="Alertes" subtitle="Welcome to your overview's dashboard" />
+      <Header
+        title="Alertes"
+        subtitle="Welcome to your alerts page, here you can manage all your alerts"
+      />
       <Separator className="my-4" />
       <Button className="mb-4 w-full" variant="outline">
         <span className="text-xl">+</span> Ajouter
