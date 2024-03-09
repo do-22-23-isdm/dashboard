@@ -14,20 +14,20 @@
     "description": "Dashboard page for ISDM MESO@LR"
   },
   "Alertes": {
-    "title": "Alertes",
-    "description": "Alertes page for ISDM MESO@LR",
-    "messages": {
+    "title": "Alerts",
+    "description": "Here, you can view alerts from your clusters, computing resources, and other system resources.",
+    "placeholder": {
       "clusterReady": {
-        "title": "Your cluster is now available",
-        "description": "Your cluster is ready to go !"
+        "title": "Cluster Available",
+        "description": "Your cluster is now ready to use!"
       },
       "quotaAlmostReached": {
-        "title": "You almost reached the total available compute",
-        "description": "Your compute is almost full, you should consider adding more"
+        "title": "Compute Quota Nearly Exhausted",
+        "description": "You're approaching the limit of available compute resources. Consider adding more."
       },
       "quotaReached": {
-        "title": "You reached the total available compute",
-        "description": "Your compute is full, you should consider adding more"
+        "title": "Compute Quota Reached",
+        "description": "Your compute resources have reached their limit. Consider adding more."
       }
     }
   }
