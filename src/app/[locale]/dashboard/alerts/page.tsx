@@ -1,9 +1,10 @@
-import { Header } from '@@/ui-custom/header';
+import React from 'react';
+import { AlertTriangleIcon, BadgeCheck, Bomb, Plus } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 import { Separator } from '@shadcn/separator';
 import { Button } from '@shadcn/button';
-import { AlertTriangleIcon, BadgeCheck, Bomb, Plus } from 'lucide-react';
-import React from 'react';
-import { getTranslations } from 'next-intl/server';
+import { Header } from '@@/ui-custom/header';
 import { AlertList } from '@/components/alerts/alert-list';
 
 export async function generateMetadata() {
@@ -15,8 +16,8 @@ export async function generateMetadata() {
   };
 }
 
-export default async function Alerts() {
-  const t = await getTranslations();
+export default function Alerts() {
+  const t = useTranslations();
 
   return (
     <>
@@ -24,7 +25,7 @@ export default async function Alerts() {
       <Separator className="my-4" />
       <Button className="mb-4" variant="outline">
         <Plus className="mr-2 h-4 w-4" />
-        {t('Button.add')}
+        {t('Common.add')}
       </Button>
       <AlertList
         className="grid grid-cols-1 gap-4"
