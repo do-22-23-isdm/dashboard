@@ -9,9 +9,5 @@
   "Dashboard": {
     "title": "Tableau de bord",
     "description": "Tableau de bord pour l'ISDM MESO@LR"
-  },
-  "Alertes": {
-    "title": "Alertes",
-    "description": "Vos alertes ISDM MESO@LR"
   }
 }
