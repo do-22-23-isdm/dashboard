@@ -1,17 +1,17 @@
-name: "[ISDM] Dashboard integration"
+name: '[ISDM] Dashboard integration'
 
 on:
   workflow_dispatch:
   pull_request:
   push:
     branches:
-      - "main"
+      - 'main'
 
 env:
   REGISTRY: ghcr.io
-  DOCKERFILE_CONTEXT: "." # Build's context is the set of files located in the specified PATH or URL (default Git context)
-  DOCKERFILE_TARGET: "production" # Sets the target stage to build
-  DOCKERFILE_FILE: "Dockerfile" # Path to the Dockerfile. (default {context}/Dockerfile)
+  DOCKERFILE_CONTEXT: '.' # Build's context is the set of files located in the specified PATH or URL (default Git context)
+  DOCKERFILE_TARGET: 'production' # Sets the target stage to build
+  DOCKERFILE_FILE: 'Dockerfile' # Path to the Dockerfile. (default {context}/Dockerfile)
 
 jobs:
   install_lint:
@@ -69,8 +69,8 @@ jobs:
         with:
           path: ${{ env.DOCKERFILE_CONTEXT }}/${{ env.DOCKERFILE_FILE }}
           fail_on: high
-          output_path: "results"
-          output_formats: "sarif"
+          output_path: 'results'
+          output_formats: 'sarif'
 
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
