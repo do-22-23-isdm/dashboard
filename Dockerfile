@@ -2,6 +2,8 @@ FROM node:20-slim AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
+RUN useradd -ms /bin/bash nextuser
+USER nextuser
 WORKDIR /app
 
 FROM base AS build-deps
