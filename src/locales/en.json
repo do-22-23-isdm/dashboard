@@ -2,6 +2,9 @@
   "Metadata": {
     "appTitle": "MESO@LR"
   },
+  "Button": {
+    "add": "Add"
+  },
   "Homepage": {
     "title": "Homepage",
     "description": "Homepage for ISDM MESO@LR"
@@ -9,5 +12,23 @@
   "Dashboard": {
     "title": "Dashboard",
     "description": "Dashboard page for ISDM MESO@LR"
+  },
+  "Alerts": {
+    "title": "Alerts",
+    "description": "Here, you can view alerts from your clusters, computing resources, and other system resources.",
+    "placeholder": {
+      "clusterReady": {
+        "title": "Cluster Available",
+        "description": "Your cluster is now ready to use!"
+      },
+      "quotaAlmostReached": {
+        "title": "Compute Quota Nearly Exhausted",
+        "description": "You're approaching the limit of available compute resources. Consider adding more."
+      },
+      "quotaReached": {
+        "title": "Compute Quota Reached",
+        "description": "Your compute resources have reached their limit. Consider adding more."
+      }
+    }
   }
 }
