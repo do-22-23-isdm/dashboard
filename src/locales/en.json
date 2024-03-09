@@ -13,7 +13,7 @@
     "title": "Dashboard",
     "description": "Dashboard page for ISDM MESO@LR"
   },
-  "Alertes": {
+  "Alerts": {
     "title": "Alerts",
     "description": "Here, you can view alerts from your clusters, computing resources, and other system resources.",
     "placeholder": {

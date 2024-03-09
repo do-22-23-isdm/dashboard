@@ -13,7 +13,7 @@
     "title": "Tableau de bord",
     "description": "Tableau de bord pour l'ISDM MESO@LR"
   },
-  "Alertes": {
+  "Alerts": {
     "title": "Alertes",
     "description": "Ici vous pouvez consulter les alertes concernant vos cluster, vos ressources de calcul et autres.",
     "placeholder": {
