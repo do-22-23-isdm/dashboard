@@ -15,7 +15,7 @@ export const listOfAlerts = [
   {
     title: 'You almost reached the total available compute - #124',
     description: 'Quota of compute almost reached - 12/08/1991',
-    icon: <AlertTriangleIcon className="text-orange-500 mr-2" />,
+    icon: <AlertTriangleIcon />,
     iconClassName: 'text-orange-500',
   },
   {
