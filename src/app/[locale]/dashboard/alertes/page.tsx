@@ -4,38 +4,36 @@ import { Separator } from '@shadcn/separator';
 import { Button } from '@shadcn/button';
 import { AlertTriangleIcon, Cable, XCircleIcon } from 'lucide-react';
 import React from 'react';
+import { getTranslations } from 'next-intl/server';
 
-export const listOfAlerts = [
-  {
-    title: 'Your cluster is now available - #124',
-    description: 'Your cluster is ready to go !',
-    icon: <Cable />,
-    iconClassName: 'text-green-500',
-  },
-  {
-    title: 'You almost reached the total available compute - #124',
-    description: 'Quota of compute almost reached - 12/08/1991',
-    icon: <AlertTriangleIcon />,
-    iconClassName: 'text-orange-500',
-  },
-  {
-    title: 'You reached the total available compute',
-    description: 'Quota of compute reached - 12/10/1991',
-    icon: <AlertTriangleIcon />,
-    iconClassName: 'text-red-500',
-  },
-];
-
-export default function AlertesView() {
+export default async function AlertesView() {
+  const t = await getTranslations();
+  const listOfAlerts = [
+    {
+      title: t('Alertes.messages.clusterReady.title'),
+      description: t('Alertes.messages.clusterReady.description'),
+      icon: <Cable />,
+      iconClassName: 'text-green-500',
+    },
+    {
+      title: t('Alertes.messages.quotaAlmostReached.title'),
+      description: t('Alertes.messages.quotaAlmostReached.description'),
+      icon: <AlertTriangleIcon />,
+      iconClassName: 'text-orange-500',
+    },
+    {
+      title: t('Alertes.messages.quotaReached.title'),
+      description: t('Alertes.messages.quotaReached.description'),
+      icon: <AlertTriangleIcon />,
+      iconClassName: 'text-red-500',
+    },
+  ];
   return (
     <>
-      <Header
-        title="Alertes"
-        subtitle="Welcome to your alerts page, here you can manage all your alerts"
-      />
+      <Header title={t('Alertes.title')} subtitle={t('Alertes.description')} />
       <Separator className="my-4" />
       <Button className="mb-4 w-full" variant="outline">
-        <span className="text-xl">+</span> Ajouter
+        <span className="text-xl">+</span> {t('Button.add')}
       </Button>
       <div className="grid grid-cols-1 gap-4">
         {listOfAlerts.map((alert, i) => (

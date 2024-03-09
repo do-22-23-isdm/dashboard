@@ -2,6 +2,9 @@
   "Metadata": {
     "appTitle": "MESO@LR"
   },
+  "Button": {
+    "add": "Ajouter"
+  },
   "Homepage": {
     "title": "Accueil",
     "description": "Accueil pour l'ISDM MESO@LR"
@@ -9,5 +12,23 @@
   "Dashboard": {
     "title": "Tableau de bord",
     "description": "Tableau de bord pour l'ISDM MESO@LR"
+  },
+  "Alertes": {
+    "title": "Alertes",
+    "description": "Vos alertes ISDM MESO@LR",
+    "messages": {
+      "clusterReady": {
+        "title": "Cluster est maintenant prêt à être utilisé",
+        "description": "Le cluster est prêt à être utilisé"
+      },
+      "quotaAlmostReached": {
+        "title": "Quota de calcule presque atteint",
+        "description": "Vous avez presque atteint votre quota de calcule"
+      },
+      "quotaReached": {
+        "title": "Quota atteint",
+        "description": "Vous avez atteint votre quota de calcule"
+      }
+    }
   }
 }

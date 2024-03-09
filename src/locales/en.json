@@ -2,6 +2,9 @@
   "Metadata": {
     "appTitle": "MESO@LR"
   },
+  "Button": {
+    "add": "Add"
+  },
   "Homepage": {
     "title": "Homepage",
     "description": "Homepage for ISDM MESO@LR"
@@ -9,5 +12,23 @@
   "Dashboard": {
     "title": "Dashboard",
     "description": "Dashboard page for ISDM MESO@LR"
+  },
+  "Alertes": {
+    "title": "Alertes",
+    "description": "Alertes page for ISDM MESO@LR",
+    "messages": {
+      "clusterReady": {
+        "title": "Your cluster is now available",
+        "description": "Your cluster is ready to go !"
+      },
+      "quotaAlmostReached": {
+        "title": "You almost reached the total available compute",
+        "description": "Your compute is almost full, you should consider adding more"
+      },
+      "quotaReached": {
+        "title": "You reached the total available compute",
+        "description": "Your compute is full, you should consider adding more"
+      }
+    }
   }
 }
