@@ -27,7 +27,7 @@ export function JobTable({ jobs }: JobTableProps) {
 
   const handleRowClick = useCallback(
     (jobId: number) => {
-      router.push(`dashboard/jobs/${jobId}`); 
+      router.push(`dashboard/jobs/${jobId}`);
     },
     [router],
   );
@@ -45,7 +45,11 @@ export function JobTable({ jobs }: JobTableProps) {
       </TableHeader>
       <TableBody>
         {jobs.map((job) => (
-          <TableRow key={job.id} onClick={() => handleRowClick(job.id)} className='cursor-pointer'>
+          <TableRow
+            key={job.id}
+            onClick={() => handleRowClick(job.id)}
+            className="cursor-pointer"
+          >
             <TableCell>{job.id}</TableCell>
             <TableCell>{job.startTime}</TableCell>
             <TableCell>{job.cluster}</TableCell>

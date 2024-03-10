@@ -99,7 +99,7 @@ export default function Job() {
       cluster: 'cluster-15',
     },
   ];
-  
+
   return (
     <>
       <Header title={t('Jobs.title')} subtitle={t('Jobs.description')} />
@@ -107,7 +107,9 @@ export default function Job() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader>
-            <CardTitle>{t('Jobs.numberOfJobs', {number: jobs.length})}</CardTitle>
+            <CardTitle>
+              {t('Jobs.numberOfJobs', { number: jobs.length })}
+            </CardTitle>
           </CardHeader>
         </Card>
       </div>
