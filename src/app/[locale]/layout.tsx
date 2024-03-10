@@ -1,8 +1,10 @@
 import { getTranslations } from 'next-intl/server';
 import { Inter } from 'next/font/google';
+import { SessionProvider } from 'next-auth/react';
 import { cn } from '@/lib/utils';
 import { Topbar } from '@@/topbar';
 import { ThemeProvider } from '@@/providers/theme-provider';
+import { Session } from 'next-auth';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,9 +20,14 @@ export async function generateMetadata() {
 type Props = {
   children: React.ReactNode;
   params: { locale: string };
+  session: Session;
 };
 
-export default function LocaleLayout({ children, params: { locale } }: Props) {
+export default function LocaleLayout({
+  children,
+  params: { locale },
+  session,
+}: Props) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <head />
@@ -30,17 +37,19 @@ export default function LocaleLayout({ children, params: { locale } }: Props) {
           inter.className,
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="flex min-h-screen flex-col">
-            <Topbar />
-            <main className="flex-1 flex">{children}</main>
-          </div>
-        </ThemeProvider>
+        <SessionProvider session={session}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="flex min-h-screen flex-col">
+              <Topbar />
+              <main className="flex-1 flex">{children}</main>
+            </div>
+          </ThemeProvider>
+        </SessionProvider>
       </body>
     </html>
   );

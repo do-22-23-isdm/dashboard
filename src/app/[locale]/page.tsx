@@ -2,8 +2,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowUpRightFromSquare, LayoutDashboard } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { auth } from '@/auth';
 
 export default function Home() {
+  auth().then(console.log); // TODO remove it
+
   return (
     <section className="container flex flex-wrap items-center justify-center xl:justify-between gap-4">
       <div className="space-y-8 text-left max-w-xl">
