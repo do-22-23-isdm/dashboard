@@ -44,5 +44,6 @@ ENV HOSTNAME="0.0.0.0"
 ENV PORT=3000
 
 USER nextjs
-# EXPOSE 3000
+EXPOSE $PORT
+HEALTHCHECK --interval=5m --timeout=3s CMD curl -f http://localhost/api/healthz || exit 1
 CMD ["node", "server.js"]
