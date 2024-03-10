@@ -1,20 +1,45 @@
-FROM node:20-slim AS base
+FROM node:20-alpine AS base
+WORKDIR /app
+
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
-WORKDIR /app
 
+# Install dependencies only when needed
 FROM base AS build-deps
+RUN apk add --no-cache libc6-compat
+
+COPY package.json pnpm-lock.yaml* ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+
+# Rebuild the source code only when needed
+FROM base AS builder
+
+COPY --from=build-deps /app/node_modules ./node_modules
 COPY . .
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm i sharp
 RUN pnpm run build
 
+# Production image, copy all the files and run next
 FROM base as production
-COPY --from=build-deps /app/node_modules /app/node_modules
-COPY --from=build-deps /app/.next /app/.next
-COPY --from=build-deps /app/package.json /app/package.json
-RUN useradd -ms /bin/bash nextuser
-USER nextuser
-EXPOSE 3000
-CMD [ "pnpm", "start" ]
 
+ENV NODE_ENV="production"
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 -s /bin/sh nextjs
+
+COPY --from=builder /app/public ./public
+
+# Set the correct permission for prerender cache
+RUN mkdir .next
+RUN chown nextjs:nodejs .next
+
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+ENV PORT=3000
+
+USER nextjs
+EXPOSE 3000
+CMD ["node", "server.js"]
