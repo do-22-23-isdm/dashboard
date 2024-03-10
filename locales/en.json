@@ -34,6 +34,6 @@
   "Jobs": {
     "title": "Compute jobs",
     "description": "This pages gives an overview of the compute jobs that have been runned on this account.",
-    "numberOfJobs": "Number of jobs runned: {number}"
+    "numberOfJobs": "Number of jobs"
   }
 }
