@@ -10,12 +10,11 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { JobState } from '@/jobs.type';
-
+import { JobState } from '@/types/jobs.type';
 export interface JobTableRow {
   id: number;
   startTime: number;
-  jobState: JobState;
+  state: JobState;
   cluster: string;
 }
 
@@ -28,8 +27,7 @@ export function JobTable({ jobs }: JobTableProps) {
 
   const handleRowClick = useCallback(
     (jobId: number) => {
-      console.log('Navigating to job with ID:', jobId);
-      router.push(`/jobs/${jobId}`); // Navigate to the job details page
+      router.push(`dashboard/jobs/${jobId}`); 
     },
     [router],
   );
@@ -47,11 +45,11 @@ export function JobTable({ jobs }: JobTableProps) {
       </TableHeader>
       <TableBody>
         {jobs.map((job) => (
-          <TableRow key={job.id} onClick={() => handleRowClick(job.id)}>
+          <TableRow key={job.id} onClick={() => handleRowClick(job.id)} className='cursor-pointer'>
             <TableCell>{job.id}</TableCell>
             <TableCell>{job.startTime}</TableCell>
-            <TableCell>{job.jobState}</TableCell>
             <TableCell>{job.cluster}</TableCell>
+            <TableCell>{job.state}</TableCell>
           </TableRow>
         ))}
       </TableBody>
