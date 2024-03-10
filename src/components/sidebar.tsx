@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { Button } from '@shadcn/button';
-import { LayoutDashboard, Inbox, HardDrive } from 'lucide-react';
+import { LayoutDashboard, Inbox, Hammer } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -20,7 +20,7 @@ const sidebarLinks = [
   {
     title: 'Jobs',
     href: '/dashboard/jobs',
-    icon: <HardDrive />,
+    icon: <Hammer />,
   },
 ];
 
