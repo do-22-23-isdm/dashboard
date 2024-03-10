@@ -30,5 +30,10 @@
         "description": "Your compute resources have reached their limit. Consider adding more."
       }
     }
+  },
+  "Jobs": {
+    "title": "Compute jobs",
+    "description": "This pages gives an overview of the compute jobs that have been runned on this account.",
+    "numberOfJobs": "Number of jobs runned: {number}"
   }
 }

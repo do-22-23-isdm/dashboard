@@ -39,8 +39,8 @@ export function JobTable({ jobs }: JobTableProps) {
         <TableRow>
           <TableCell>Job ID</TableCell>
           <TableCell>Start Time</TableCell>
-          <TableCell>State</TableCell>
           <TableCell>Cluster</TableCell>
+          <TableCell>State</TableCell>
         </TableRow>
       </TableHeader>
       <TableBody>

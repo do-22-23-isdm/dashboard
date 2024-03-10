@@ -30,5 +30,10 @@
         "description": "Vous avez atteint la limite de votre quota de calcul. Pensez à en ajouter davantage."
       }
     }
+  },
+  "Jobs": {
+    "title": "Tâches de calcul",
+    "description": "Cette page donne une vue d'ensemble des tâches de calcul éxécutées sur ce compte.",
+    "numberOfJobs": "Nombre de tâches exécutées: {number}"
   }
 }

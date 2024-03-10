@@ -1,11 +1,16 @@
-import { useTranslations } from 'next-intl';
-import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/card';
+'use client';
+
+import { Card, CardHeader, CardTitle } from '@shadcn/card';
 import { Separator } from '@shadcn/separator';
-import { JobTable, JobTableRow } from '@/components/jobs/jobTable';
 import { Header } from '@@/ui-custom/header';
+import { useTranslations } from 'next-intl';
+import { JobTable, JobTableRow } from '@/components/jobs/jobTable';
+import { useGetJobsQuery } from '@/lib/store/api/jobApiSlice';
 
 export default function Job() {
-  const t = useTranslations('Jobs');
+  const t = useTranslations();
+
+  const { data: j} = useGetJobsQuery();
 
   const jobs: JobTableRow[] = [
     {
@@ -99,15 +104,15 @@ export default function Job() {
       cluster: 'cluster-15',
     },
   ];
-
+  
   return (
     <>
-      <Header title={t('title')} subtitle={t('description')} />
+      <Header title={t('Jobs.title')} subtitle={t('Jobs.description')} />
       <Separator className="my-4" />
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader>
-            <CardTitle>{t('numberOfJobs', {number: jobs.length})}</CardTitle>
+            <CardTitle>{t('Jobs.numberOfJobs', {number: jobs.length})}</CardTitle>
           </CardHeader>
         </Card>
       </div>
