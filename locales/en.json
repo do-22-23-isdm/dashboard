@@ -32,8 +32,8 @@
     }
   },
   "Jobs": {
-    "title": "Compute jobs",
-    "description": "This pages gives an overview of the compute jobs that have been runned on this account.",
+    "title": "Jobs",
+    "description": "This page provides a summary of the compute jobs executed under this account.",
     "numberOfJobs": "Number of jobs"
   }
 }

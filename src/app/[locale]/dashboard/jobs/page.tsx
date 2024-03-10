@@ -1,8 +1,18 @@
+import { getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Card, CardHeader, CardTitle } from '@shadcn/card';
 import { Separator } from '@shadcn/separator';
 import { Header } from '@@/ui-custom/header';
 import { JobTable, JobTableProps } from '@@/jobs/jobTable';
+
+export async function generateMetadata() {
+  const t = await getTranslations();
+
+  return {
+    title: `${t('Jobs.title')} - ${t('Metadata.appTitle')}`,
+    description: t('Jobs.description'),
+  };
+}
 
 export default function Job() {
   const t = useTranslations('Jobs');
