@@ -1,3 +1,4 @@
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
@@ -21,6 +22,8 @@ type Props = {
 };
 
 export default function LocaleLayout({ children, params: { locale } }: Props) {
+  const messages = useMessages();
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <head />
@@ -36,10 +39,12 @@ export default function LocaleLayout({ children, params: { locale } }: Props) {
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col">
-            <Topbar />
-            <main className="flex-1 flex">{children}</main>
-          </div>
+          <NextIntlClientProvider messages={messages}>
+            <div className="flex min-h-screen flex-col">
+              <Topbar />
+              <main className="flex-1 flex">{children}</main>
+            </div>
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>
