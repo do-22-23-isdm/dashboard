@@ -1,8 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Inter } from 'next/font/google';
-import { SessionProvider } from 'next-auth/react';
-import { Session } from 'next-auth';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@@/providers/theme-provider';
 import { ThemeSwitcher } from '@@/ui-custom/theme-switcher';
@@ -24,14 +22,9 @@ export async function generateMetadata() {
 type Props = {
   children: React.ReactNode;
   params: { locale: string };
-  session: Session;
 };
 
-export default function LocaleLayout({
-  children,
-  params: { locale },
-  session,
-}: Props) {
+export default function LocaleLayout({ children, params: { locale } }: Props) {
   const t = useTranslations();
 
   return (
@@ -43,41 +36,34 @@ export default function LocaleLayout({
           inter.className,
         )}
       >
-        <SessionProvider session={session}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="flex min-h-screen flex-col">
-              <Topbar>
-                <TopbarSection>
-                  <MainNav className="ml-6">
-                    <MainNavItem
-                      link={{
-                        title: t('Metadata.appTitle'),
-                        href: '/',
-                        level: 'h1',
-                      }}
-                    />
-                    <MainNavItem
-                      link={{
-                        title: t('Dashboard.title'),
-                        href: '/dashboard',
-                      }}
-                    />
-                  </MainNav>
-                </TopbarSection>
-                <TopbarSection>
-                  <ThemeSwitcher />
-                  <UserNav />
-                </TopbarSection>
-              </Topbar>
-              <main className="flex-1 flex">{children}</main>
-            </div>
-          </ThemeProvider>
-        </SessionProvider>
+        <ThemeProvider>
+        <div className="flex min-h-screen flex-col">
+          <Topbar>
+            <TopbarSection>
+              <MainNav className="ml-6">
+                <MainNavItem
+                  link={{
+                    title: t('Metadata.appTitle'),
+                    href: '/',
+                    level: 'h1',
+                  }}
+                />
+                <MainNavItem
+                  link={{
+                    title: t('Dashboard.title'),
+                    href: '/dashboard',
+                  }}
+                />
+              </MainNav>
+            </TopbarSection>
+            <TopbarSection>
+              <ThemeSwitcher />
+              <UserNav />
+            </TopbarSection>
+          </Topbar>
+          <main className="flex-1 flex">{children}</main>
+        </div>
+        </ThemeProvider>
       </body>
     </html>
   );
