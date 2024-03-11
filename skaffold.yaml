@@ -1,0 +1,15 @@
+apiVersion: skaffold/v4beta9
+kind: Config
+metadata:
+  name: dashboard
+build:
+  artifacts:
+    - image: ghcr.io/do-22-23-isdm/dashboard
+      docker:
+        dockerfile: Dockerfile
+  local:
+    useBuildkit: true
+manifests:
+  rawYaml:
+    - kubernetes/deployment.yaml
+    - kubernetes/svc.yaml
