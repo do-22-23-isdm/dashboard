@@ -11,7 +11,11 @@
   },
   "Dashboard": {
     "title": "Dashboard",
-    "description": "Dashboard page for ISDM MESO@LR"
+    "description": "Dashboard page for ISDM MESO@LR",
+    "Sidebar": {
+      "overview": "Overview",
+      "alerts": "Alerts"
+    }
   },
   "Alerts": {
     "title": "Alerts",

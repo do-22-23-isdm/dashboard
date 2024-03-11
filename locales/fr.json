@@ -11,7 +11,11 @@
   },
   "Dashboard": {
     "title": "Tableau de bord",
-    "description": "Tableau de bord pour l'ISDM MESO@LR"
+    "description": "Tableau de bord pour l'ISDM MESO@LR",
+    "Sidebar": {
+      "overview": "Aperçu",
+      "alerts": "Alertes"
+    }
   },
   "Alerts": {
     "title": "Alertes",
