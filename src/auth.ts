@@ -12,4 +12,11 @@ export const {
       issuer: process.env.KEYCLOAK_ISSUER,
     }),
   ],
+  pages: {
+    // signIn: '/auth/signin',
+    // signOut: '/auth/signout',
+    // error: '/auth/error',
+    verifyRequest: '/',
+    newUser: '/',
+  },
 });
