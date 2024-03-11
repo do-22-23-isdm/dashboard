@@ -1,10 +1,14 @@
 import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 import { Inter } from 'next/font/google';
 import { SessionProvider } from 'next-auth/react';
-import { cn } from '@/lib/utils';
-import { Topbar } from '@@/topbar';
-import { ThemeProvider } from '@@/providers/theme-provider';
 import { Session } from 'next-auth';
+import { cn } from '@/lib/utils';
+import { ThemeProvider } from '@@/providers/theme-provider';
+import { ThemeSwitcher } from '@@/ui-custom/theme-switcher';
+import { Topbar, TopbarSection } from '@@/navigation/topbar';
+import { MainNav, MainNavItem } from '@@/navigation/main-nav';
+import { UserNav } from '@@/navigation/user-nav';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,6 +32,8 @@ export default function LocaleLayout({
   params: { locale },
   session,
 }: Props) {
+  const t = useTranslations();
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <head />
@@ -45,7 +51,29 @@ export default function LocaleLayout({
             disableTransitionOnChange
           >
             <div className="flex min-h-screen flex-col">
-              <Topbar />
+              <Topbar>
+                <TopbarSection>
+                  <MainNav className="ml-6">
+                    <MainNavItem
+                      link={{
+                        title: t('Metadata.appTitle'),
+                        href: '/',
+                        level: 'h1',
+                      }}
+                    />
+                    <MainNavItem
+                      link={{
+                        title: t('Dashboard.title'),
+                        href: '/dashboard',
+                      }}
+                    />
+                  </MainNav>
+                </TopbarSection>
+                <TopbarSection>
+                  <ThemeSwitcher />
+                  <UserNav />
+                </TopbarSection>
+              </Topbar>
               <main className="flex-1 flex">{children}</main>
             </div>
           </ThemeProvider>

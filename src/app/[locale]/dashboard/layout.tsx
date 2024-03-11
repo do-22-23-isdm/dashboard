@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { LayoutDashboard, Inbox } from 'lucide-react';
-import { Sidebar, SidebarSection } from '@@/navigation/sidebar/sidebar';
+import { Sidebar, SidebarSection } from '@@/navigation/sidebar';
 import { SidebarItem } from '@@/navigation/sidebar/item';
 
 export async function generateMetadata() {
