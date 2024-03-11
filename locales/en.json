@@ -3,7 +3,8 @@
     "appTitle": "MESO@LR"
   },
   "Common": {
-    "add": "Add"
+    "add": "Add",
+    "login": "Log in"
   },
   "Homepage": {
     "title": "Homepage",

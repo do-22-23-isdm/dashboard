@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from '@shadcn/dropdown-menu';
 import { Button } from '@shadcn/button';
-import { Avatar, AvatarFallback } from '../ui/avatar';
+import { Avatar, AvatarFallback } from '@shadcn/avatar';
 
 type DropdownMenuData = {
   label: {
@@ -54,7 +55,11 @@ export function UserNav() {
           ))}
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Log out</DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link href="/api/auth/signout" className="w-full cursor-pointer">
+            Log out
+          </Link>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

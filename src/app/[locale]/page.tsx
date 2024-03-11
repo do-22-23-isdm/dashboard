@@ -1,11 +1,13 @@
-import { Button } from '@/components/ui/button';
-import { ArrowUpRightFromSquare, LayoutDashboard } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
+import { ArrowUpRightFromSquare, LayoutDashboard, LogIn } from 'lucide-react';
 import { auth } from '@/auth';
+import { Button } from '@/components/ui/button';
 
-export default function Home() {
-  auth().then(console.log); // TODO remove it
+export default async function Home() {
+  const t = await getTranslations();
+  const session = await auth();
 
   return (
     <section className="container flex flex-wrap items-center justify-center xl:justify-between gap-4">
@@ -25,13 +27,19 @@ export default function Home() {
             Montpellier&apos;s technology platform.
           </p>
         </div>
-        <div className="flex flex-col sm:flex-row gap-8 text-xl">
+        <div className="flex flex-col sm:flex-row gap-4 text-xl">
           <Button asChild className="text-lg font-bold p-6 space-x-2">
-            {/* Replace with login button if not auth */}
-            <Link href="/dashboard">
-              <LayoutDashboard />
-              <span>Get started</span>
-            </Link>
+            {session ? (
+              <Link href="/dashboard">
+                <LayoutDashboard />
+                <span>Get started</span>
+              </Link>
+            ) : (
+              <Link href="/api/auth/signin">
+                <LogIn className="w-5 h-5" />
+                <span>{t('Common.login')}</span>
+              </Link>
+            )}
           </Button>
           <Button
             asChild
@@ -39,7 +47,7 @@ export default function Home() {
             className="text-lg font-bold p-6 space-x-2"
           >
             <a href="https://meso-lr.umontpellier.fr/" target="_blank">
-              <ArrowUpRightFromSquare />
+              <ArrowUpRightFromSquare className="w-5 h-5" />
               <span>Learn More</span>
             </a>
           </Button>
