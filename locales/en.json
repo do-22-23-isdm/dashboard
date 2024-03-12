@@ -4,7 +4,9 @@
   },
   "Common": {
     "add": "Add",
-    "login": "Log in"
+    "login": "Log in",
+    "profile": "Profile",
+    "settings": "Settings"
   },
   "Homepage": {
     "title": "Homepage",

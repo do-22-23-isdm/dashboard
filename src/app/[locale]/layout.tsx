@@ -67,7 +67,7 @@ export default async function LocaleLayout({
               </TopbarSection>
               <TopbarSection>
                 <ThemeSwitcher />
-                {session && <UserNav />}
+                {session?.user && <UserNav user={session.user} />}
                 {session === null && (
                   <Button size="sm" asChild className="space-x-1">
                     <Link href="/api/auth/signin">

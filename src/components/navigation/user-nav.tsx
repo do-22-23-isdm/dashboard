@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { User } from 'next-auth';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,49 +11,44 @@ import {
 } from '@shadcn/dropdown-menu';
 import { Button } from '@shadcn/button';
 import { Avatar, AvatarFallback } from '@shadcn/avatar';
+import { useTranslations } from 'next-intl';
 
-type DropdownMenuData = {
-  label: {
-    name: string;
-    email: string;
-  };
-  items: { label: string }[];
+type Props = {
+  user: User;
 };
 
-const dropdownMenuData: DropdownMenuData = {
-  label: {
-    name: 'john.doe',
-    email: 'john.doe@example.tld',
-  },
-  items: [{ label: 'Profile' }, { label: 'Settings' }],
-};
+export function UserNav({ user }: Props) {
+  const t = useTranslations('Common');
 
-export function UserNav() {
+  // get the initials of the user's name
+  // supports separation for: space, dot, hyphen, underscore
+  const initials = user.name
+    ?.split(/[ .\-_]/)
+    .map((part) => part.charAt(0).toUpperCase())
+    .join('');
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-8 w-8">
-            <AvatarFallback>JD</AvatarFallback>
+            <AvatarFallback>{initials}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">
-              {dropdownMenuData.label.name}
-            </p>
+            <p className="text-sm font-medium leading-none">{user.name}</p>
             <p className="text-xs leading-none text-muted-foreground">
-              {dropdownMenuData.label.email}
+              {user.email}
             </p>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          {dropdownMenuData.items.map((item, i) => (
-            <DropdownMenuItem key={i}>{item.label}</DropdownMenuItem>
-          ))}
+          <DropdownMenuItem>{t('profile')}</DropdownMenuItem>
+          <DropdownMenuItem>{t('settings')}</DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>

@@ -4,7 +4,9 @@
   },
   "Common": {
     "add": "Ajouter",
-    "login": "Se connecter"
+    "login": "Se connecter",
+    "profile": "Compte",
+    "settings": "Paramètres"
   },
   "Homepage": {
     "title": "Accueil",
