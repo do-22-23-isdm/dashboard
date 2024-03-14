@@ -1,6 +1,16 @@
+import { ThemeSwitcher } from '@@/ui-custom/theme-switcher';
 import { useTranslations } from 'next-intl';
 import { Separator } from '@shadcn/separator';
-import { ThemeSwitcher } from '@@/ui-custom/theme-switcher';
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata() {
+  const t = await getTranslations();
+
+  return {
+    title: `${t('Account.Settings.title')} - ${t('Metadata.appTitle')}`,
+    description: t('Account.Settings.description'),
+  };
+}
 
 export default function Settings() {
   const t = useTranslations();

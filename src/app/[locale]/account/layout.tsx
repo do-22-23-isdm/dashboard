@@ -1,8 +1,18 @@
+import { getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Settings2, User } from 'lucide-react';
 import { Separator } from '@shadcn/separator';
 import { Sidebar, SidebarSection } from '@@/navigation/sidebar';
 import { SidebarItem } from '@@/navigation/sidebar/item';
+
+export async function generateMetadata() {
+  const t = await getTranslations();
+
+  return {
+    title: `${t('Account.title')} - ${t('Metadata.appTitle')}`,
+    description: t('Account.description'),
+  };
+}
 
 type Props = {
   children: React.ReactNode;
@@ -10,6 +20,7 @@ type Props = {
 
 export default function Profile({ children }: Props) {
   const t = useTranslations();
+
   return (
     <div className="hidden space-y-6 pt-10 px-16 pb-16 md:block flex-1">
       <div className="space-y-0.5">
