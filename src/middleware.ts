@@ -15,7 +15,10 @@ export default auth((req) => {
   const session = req.auth;
   const path = req.nextUrl.pathname;
 
-  if (session === null && path.startsWith('/dashboard')) {
+  if (
+    session === null &&
+    (path.startsWith('/dashboard') || path.startsWith('/account'))
+  ) {
     const url = req.nextUrl.clone();
     url.pathname = '/api/auth/signin';
     return NextResponse.redirect(url);
