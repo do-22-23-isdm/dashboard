@@ -5,8 +5,26 @@
   "Common": {
     "add": "Ajouter",
     "login": "Se connecter",
-    "profile": "Compte",
-    "settings": "Paramètres"
+    "logout": "Se déconnecter",
+    "theme": "Thème",
+    "themeColors": {
+      "dark": "Sombre",
+      "light": "Clair"
+    }
+  },
+  "Account": {
+    "title": "Compte",
+    "description": "Gérer votre compte.",
+    "Profile": {
+      "title": "Profil",
+      "description": "Ici, vous pouvez voir les informations de votre profil.",
+      "fullname": "Nom complet",
+      "email": "Adresse mail"
+    },
+    "Settings": {
+      "title": "Paramètres",
+      "description": "Mettez à jour vos paramètres."
+    }
   },
   "Homepage": {
     "title": "Accueil",

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { User } from 'next-auth';
+import { useTranslations } from 'next-intl';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,14 +12,13 @@ import {
 } from '@shadcn/dropdown-menu';
 import { Button } from '@shadcn/button';
 import { Avatar, AvatarFallback } from '@shadcn/avatar';
-import { useTranslations } from 'next-intl';
 
 type Props = {
   user: User;
 };
 
 export function UserNav({ user }: Props) {
-  const t = useTranslations('Common');
+  const t = useTranslations();
 
   // get the initials of the user's name
   // supports separation for: space, dot, hyphen, underscore
@@ -38,22 +38,33 @@ export function UserNav({ user }: Props) {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
-          <div className="flex flex-col space-y-1">
+          <div
+            className="flex flex-col space-y-1"
+            title={user.email ? user.email : undefined}
+          >
             <p className="text-sm font-medium leading-none">{user.name}</p>
-            <p className="text-xs leading-none text-muted-foreground">
+            <p className="text-xs leading-none text-muted-foreground text-ellipsis overflow-hidden">
               {user.email}
             </p>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>{t('profile')}</DropdownMenuItem>
-          <DropdownMenuItem>{t('settings')}</DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/account" className="w-full cursor-pointer">
+              {t('Account.title')}
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/account/settings" className="w-full cursor-pointer">
+              {t('Account.Settings.title')}
+            </Link>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
           <Link href="/api/auth/signout" className="w-full cursor-pointer">
-            Log out
+            {t('Common.logout')}
           </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>

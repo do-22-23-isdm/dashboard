@@ -5,12 +5,30 @@
   "Common": {
     "add": "Add",
     "login": "Log in",
-    "profile": "Profile",
-    "settings": "Settings"
+    "logout": "Log out",
+    "theme": "Theme",
+    "themeColors": {
+      "dark": "Dark",
+      "light": "Light"
+    }
   },
   "Homepage": {
     "title": "Homepage",
     "description": "Homepage for ISDM MESO@LR"
+  },
+  "Account": {
+    "title": "Account",
+    "description": "Manage your account.",
+    "Profile": {
+      "title": "Profile",
+      "description": "Here, you can see your profile information.",
+      "fullname": "Full name",
+      "email": "Email"
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "Update your account settings."
+    }
   },
   "Dashboard": {
     "title": "Dashboard",
