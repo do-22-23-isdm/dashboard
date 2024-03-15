@@ -3,7 +3,33 @@
     "appTitle": "MESO@LR"
   },
   "Common": {
-    "add": "Ajouter"
+    "add": "Ajouter",
+    "login": "Se connecter",
+    "logout": "Se déconnecter",
+    "theme": "Thème",
+    "themeColors": {
+      "dark": "Sombre",
+      "light": "Clair"
+    },
+    "language": "Langage",
+    "languageOptions": {
+      "en": "🇬🇧 Anglais",
+      "fr": "🇫🇷 Français"
+    }
+  },
+  "Account": {
+    "title": "Compte",
+    "description": "Gérer votre compte.",
+    "Profile": {
+      "title": "Profil",
+      "description": "Ici, vous pouvez voir les informations de votre profil.",
+      "fullname": "Nom complet",
+      "email": "Adresse mail"
+    },
+    "Settings": {
+      "title": "Paramètres",
+      "description": "Mettez à jour vos paramètres."
+    }
   },
   "Homepage": {
     "title": "Accueil",
@@ -11,7 +37,12 @@
   },
   "Dashboard": {
     "title": "Tableau de bord",
-    "description": "Tableau de bord pour l'ISDM MESO@LR"
+    "description": "Tableau de bord pour l'ISDM MESO@LR",
+    "Sidebar": {
+      "overview": "Aperçu",
+      "alerts": "Alertes",
+      "jobs": "Tâches de calcul"
+    }
   },
   "Alerts": {
     "title": "Alertes",
