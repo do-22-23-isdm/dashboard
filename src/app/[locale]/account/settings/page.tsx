@@ -2,6 +2,7 @@ import { ThemeSwitcher } from '@@/ui-custom/theme-switcher';
 import { useTranslations } from 'next-intl';
 import { Separator } from '@shadcn/separator';
 import { getTranslations } from 'next-intl/server';
+import { LanguageSwitcher } from '@/components/ui-custom/lang-switcher';
 
 export async function generateMetadata() {
   const t = await getTranslations();
@@ -24,11 +25,22 @@ export default function Settings() {
         </p>
       </div>
       <Separator />
-      <div>
-        <ThemeSwitcher
-          lightLabel={t('Common.themeColors.light')}
-          darkLabel={t('Common.themeColors.dark')}
-        />
+      <div className="space-y-8">
+        <div className="space-y-2">
+          <h4 className="text-sm font-medium leading-none">
+            {t('Common.theme')}
+          </h4>
+          <ThemeSwitcher
+            lightLabel={t('Common.themeColors.light')}
+            darkLabel={t('Common.themeColors.dark')}
+          />
+        </div>
+        <div className="space-y-2">
+          <h4 className="text-sm font-medium leading-none">
+            {t('Common.language')}
+          </h4>
+          <LanguageSwitcher />
+        </div>
       </div>
     </div>
   );

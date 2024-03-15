@@ -1,14 +1,13 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextResponse } from 'next/server';
 import { auth } from '@/auth';
-
-const locales = ['en', 'fr'];
+import { localePrefix, locales } from '@/navigation';
 
 const intlMiddleware = createMiddleware({
   defaultLocale: 'en',
   locales,
   // See: https://next-intl-docs.vercel.app/docs/routing/middleware#locale-prefix-never
-  localePrefix: 'never',
+  localePrefix,
 });
 
 export default auth((req) => {

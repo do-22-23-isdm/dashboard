@@ -10,6 +10,11 @@
     "themeColors": {
       "dark": "Sombre",
       "light": "Clair"
+    },
+    "language": "Langage",
+    "languageOptions": {
+      "en": "Anglais",
+      "fr": "Français"
     }
   },
   "Account": {
