@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { getTranslations } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { Inter } from 'next/font/google';
 import { LogIn } from 'lucide-react';
 import { auth } from '@/auth';
@@ -32,6 +33,7 @@ export default async function LocaleLayout({
   params: { locale },
 }: Props) {
   const t = await getTranslations();
+  const messages = await getMessages();
   const session = await auth();
 
   return (
@@ -44,42 +46,44 @@ export default async function LocaleLayout({
         )}
       >
         <ThemeProvider>
-          <div className="flex min-h-screen flex-col">
-            <Topbar>
-              <TopbarSection>
-                <MainNav>
-                  <MainNavItem
-                    link={{
-                      title: t('Metadata.appTitle'),
-                      href: '/',
-                      level: 'h1',
-                    }}
-                  />
-                  {session && (
+          <NextIntlClientProvider messages={messages}>
+            <div className="flex min-h-screen flex-col">
+              <Topbar>
+                <TopbarSection>
+                  <MainNav>
                     <MainNavItem
                       link={{
-                        title: t('Dashboard.title'),
-                        href: '/dashboard',
+                        title: t('Metadata.appTitle'),
+                        href: '/',
+                        level: 'h1',
                       }}
                     />
+                    {session && (
+                      <MainNavItem
+                        link={{
+                          title: t('Dashboard.title'),
+                          href: '/dashboard',
+                        }}
+                      />
+                    )}
+                  </MainNav>
+                </TopbarSection>
+                <TopbarSection>
+                  <ThemeSwitcher />
+                  {session?.user && <UserNav user={session.user} />}
+                  {session === null && (
+                    <Button size="sm" asChild className="space-x-1">
+                      <Link href="/api/auth/signin">
+                        <LogIn className="w-4 h-4" />
+                        <span>{t('Common.login')}</span>
+                      </Link>
+                    </Button>
                   )}
-                </MainNav>
-              </TopbarSection>
-              <TopbarSection>
-                <ThemeSwitcher />
-                {session?.user && <UserNav user={session.user} />}
-                {session === null && (
-                  <Button size="sm" asChild className="space-x-1">
-                    <Link href="/api/auth/signin">
-                      <LogIn className="w-4 h-4" />
-                      <span>{t('Common.login')}</span>
-                    </Link>
-                  </Button>
-                )}
-              </TopbarSection>
-            </Topbar>
-            <main className="flex-1 flex">{children}</main>
-          </div>
+                </TopbarSection>
+              </Topbar>
+              <main className="flex-1 flex">{children}</main>
+            </div>
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>

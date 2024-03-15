@@ -40,7 +40,8 @@
     "description": "Dashboard page for ISDM MESO@LR",
     "Sidebar": {
       "overview": "Overview",
-      "alerts": "Alerts"
+      "alerts": "Alerts",
+      "jobs": "Jobs"
     }
   },
   "Alerts": {
@@ -60,5 +61,10 @@
         "description": "Your compute resources have reached their limit. Consider adding more."
       }
     }
+  },
+  "Jobs": {
+    "title": "Jobs",
+    "description": "This page provides a summary of the compute jobs executed under this account.",
+    "numberOfJobs": "Number of jobs"
   }
 }

@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
-import { LayoutDashboard, Inbox } from 'lucide-react';
+import { LayoutDashboard, Inbox, Hammer } from 'lucide-react';
 import { Sidebar, SidebarSection } from '@@/navigation/sidebar';
 import { SidebarItem } from '@@/navigation/sidebar/item';
 
@@ -29,6 +29,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             title={t('alerts')}
             href={'/dashboard/alerts'}
             icon={<Inbox />}
+          />
+          <SidebarItem
+            title={t('jobs')}
+            href={'/dashboard/jobs'}
+            icon={<Hammer />}
           />
         </SidebarSection>
       </Sidebar>

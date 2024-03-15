@@ -40,7 +40,8 @@
     "description": "Tableau de bord pour l'ISDM MESO@LR",
     "Sidebar": {
       "overview": "Aperçu",
-      "alerts": "Alertes"
+      "alerts": "Alertes",
+      "jobs": "Tâches de calcul"
     }
   },
   "Alerts": {
@@ -60,5 +61,10 @@
         "description": "Vous avez atteint la limite de votre quota de calcul. Pensez à en ajouter davantage."
       }
     }
+  },
+  "Jobs": {
+    "title": "Tâches de calcul",
+    "description": "Cette page offre un aperçu des tâches de calcul exécutées sur ce compte.",
+    "numberOfJobs": "Nombre de tâches"
   }
 }
