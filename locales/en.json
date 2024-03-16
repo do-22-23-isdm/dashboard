@@ -15,7 +15,11 @@
     "languageOptions": {
       "en": "🇬🇧 English",
       "fr": "🇫🇷 French"
-    }
+    },
+    "details": "Details",
+    "download": "Download",
+    "approve": "Approve",
+    "reject": "Reject"
   },
   "Homepage": {
     "title": "Homepage",
@@ -41,7 +45,8 @@
     "Sidebar": {
       "overview": "Overview",
       "alerts": "Alerts",
-      "jobs": "Jobs"
+      "jobs": "Jobs",
+      "estimate": "Estimate"
     }
   },
   "Alerts": {
@@ -66,5 +71,30 @@
     "title": "Jobs",
     "description": "This page provides a summary of the compute jobs executed under this account.",
     "numberOfJobs": "Number of jobs"
+  },
+  "Estimate": {
+    "title": "Estimate",
+    "description": "Estimate the cost of your compute jobs.",
+    "askForEstimate": "Ask for an estimate",
+    "placeholder": {
+      "estimateInProgress": {
+        "title": "Estimate in progress",
+        "description": "Your estimate is being calculated. Please wait."
+      },
+      "estimateReady": {
+        "title": "Estimate Ready",
+        "description": "Your estimate is ready. Click here to view."
+      }
+    },
+    "details": {
+      "title": "Estimate Details",
+      "description": "Here, you can view the details of your estimate.",
+      "invoice": "Invoice",
+      "status": {
+        "waitingForApproval": "Waiting for approval",
+        "approved": "You have approved this estimate",
+        "rejected": "You have rejected this estimate"
+      }
+    }
   }
 }

@@ -15,7 +15,11 @@
     "languageOptions": {
       "en": "🇬🇧 Anglais",
       "fr": "🇫🇷 Français"
-    }
+    },
+    "details": "Détails",
+    "download": "Télécharger",
+    "approve": "Approuver",
+    "reject": "Rejeter"
   },
   "Account": {
     "title": "Compte",
@@ -41,7 +45,8 @@
     "Sidebar": {
       "overview": "Aperçu",
       "alerts": "Alertes",
-      "jobs": "Tâches de calcul"
+      "jobs": "Tâches de calcul",
+      "estimate": "Devis"
     }
   },
   "Alerts": {
@@ -66,5 +71,30 @@
     "title": "Tâches de calcul",
     "description": "Cette page offre un aperçu des tâches de calcul exécutées sur ce compte.",
     "numberOfJobs": "Nombre de tâches"
+  },
+  "Estimate": {
+    "title": "Devis",
+    "description": "Estimez le coût de vos tâches de calcul.",
+    "askForEstimate": "Faire une demande",
+    "placeholder": {
+      "estimateInProgress": {
+        "title": "Devis en cours de traitement",
+        "description": "Votre devis est en cours de traitement. Veuillez patienter."
+      },
+      "estimateReady": {
+        "title": "Devis prêt",
+        "description": "Votre devis est prêt. Vous pouvez désormais le consulter le details."
+      }
+    },
+    "details": {
+      "title": "Détails du devis",
+      "description": "Détails du devis pour les tâches de calcul.",
+      "invoice": "Facture",
+      "status": {
+        "waitingForApproval": "En attente de votre approbation",
+        "approved": "Vous avez approuvé le devis",
+        "rejected": "Vous avez rejeté le devis"
+      }
+    }
   }
 }
