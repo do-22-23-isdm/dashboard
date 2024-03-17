@@ -3,15 +3,46 @@
     "appTitle": "MESO@LR"
   },
   "Common": {
-    "add": "Add"
+    "add": "Add",
+    "login": "Log in",
+    "logout": "Log out",
+    "theme": "Theme",
+    "themeColors": {
+      "dark": "Dark",
+      "light": "Light"
+    },
+    "language": "Language",
+    "languageOptions": {
+      "en": "🇬🇧 English",
+      "fr": "🇫🇷 French"
+    }
   },
   "Homepage": {
     "title": "Homepage",
     "description": "Homepage for ISDM MESO@LR"
   },
+  "Account": {
+    "title": "Account",
+    "description": "Manage your account.",
+    "Profile": {
+      "title": "Profile",
+      "description": "Here, you can see your profile information.",
+      "fullname": "Full name",
+      "email": "Email"
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "Update your account settings."
+    }
+  },
   "Dashboard": {
     "title": "Dashboard",
-    "description": "Dashboard page for ISDM MESO@LR"
+    "description": "Dashboard page for ISDM MESO@LR",
+    "Sidebar": {
+      "overview": "Overview",
+      "alerts": "Alerts",
+      "jobs": "Jobs"
+    }
   },
   "Alerts": {
     "title": "Alerts",
@@ -30,5 +61,10 @@
         "description": "Your compute resources have reached their limit. Consider adding more."
       }
     }
+  },
+  "Jobs": {
+    "title": "Jobs",
+    "description": "This page provides a summary of the compute jobs executed under this account.",
+    "numberOfJobs": "Number of jobs"
   }
 }
