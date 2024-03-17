@@ -3,21 +3,21 @@
 import React from 'react';
 import { Button } from '@shadcn/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/card';
-import { Badge, Download, File, Handshake, X } from 'lucide-react';
+import { Badge, Download, File, Handshake, X, CreditCard } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Label, Separator } from '@radix-ui/react-dropdown-menu';
 import { Input } from '../ui/input';
 
 type Props = {
   id: string;
-  status: string;
+  state: string;
   readOnlyInputs: {
     label: string;
     value: string;
   }[];
 } & React.HTMLAttributes<HTMLDivElement>;
 
-export function EstimateDetailsForm({ readOnlyInputs, id, status }: Props) {
+export function EstimateDetailsForm({ readOnlyInputs, id, state }: Props) {
   const t = useTranslations();
   return (
     <>
@@ -30,7 +30,7 @@ export function EstimateDetailsForm({ readOnlyInputs, id, status }: Props) {
               </CardTitle>
               <div className="flex items-center space-x-2 mt-2">
                 <Badge className={`w-3 h-3 rounded-full bg-orange-500`} />
-                <p>{status}</p>
+                <p>{state}</p>
               </div>
             </div>
             <div className="flex space-x-2">
@@ -66,6 +66,10 @@ export function EstimateDetailsForm({ readOnlyInputs, id, status }: Props) {
           <Button className="mb-4 ml-2" variant="outline">
             <X className="mr-2 h-4 w-4 text-red-500" />
             {t('Common.reject')}
+          </Button>
+          <Button className="mb-4 ml-2" variant="outline">
+            <CreditCard className="mr-2 h-4 w-4 " />
+            {t('Common.pay')}
           </Button>
         </CardContent>
       </Card>

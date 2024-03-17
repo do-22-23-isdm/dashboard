@@ -19,7 +19,8 @@
     "details": "Détails",
     "download": "Télécharger",
     "approve": "Approuver",
-    "reject": "Rejeter"
+    "reject": "Rejeter",
+    "pay": "Payer"
   },
   "Account": {
     "title": "Compte",
@@ -76,25 +77,42 @@
     "title": "Devis",
     "description": "Estimez le coût de vos tâches de calcul.",
     "askForEstimate": "Faire une demande",
-    "placeholder": {
+    "status": {
       "estimateInProgress": {
         "title": "Devis en cours de traitement",
         "description": "Votre devis est en cours de traitement. Veuillez patienter."
       },
-      "estimateReady": {
-        "title": "Devis prêt",
-        "description": "Votre devis est prêt. Vous pouvez désormais le consulter le details."
+      "estimateWaitingForApproval": {
+        "title": "Devis en attente d'approbation",
+        "description": "Votre devis est prêt. Votre devis est disponible au téléchargement. Veuillez l'approuver ou le rejeter."
+      },
+      "estimateApproved": {
+        "waitingForPayment": {
+          "title": "En attente de paiement",
+          "description": "Votre devis a été approuvé. Veuillez payer pour commencer le calcul."
+        },
+        "paymentPending": {
+          "title": "Votre paiement est en attente d'approbation",
+          "description": "Votre paiement est en attente. Veuillez patienter."
+        },
+        "paymentSuccessful": {
+          "title": "Paiement effectué avec succès",
+          "description": "Votre paiement a été effectué avec succès. Votre facture est prête."
+        },
+        "paymentFailed": {
+          "title": "Votre paiement a échoué",
+          "description": "Votre paiement a échoué. Veuillez réessayer."
+        }
+      },
+      "estimateRejected": {
+        "title": "Devis rejeté",
+        "description": "Vous avez rejeté le devis. Veuillez en faire une nouvelle demande."
       }
     },
     "details": {
       "title": "Détails du devis",
       "description": "Détails du devis pour les tâches de calcul.",
-      "invoice": "Facture",
-      "status": {
-        "waitingForApproval": "En attente de votre approbation",
-        "approved": "Vous avez approuvé le devis",
-        "rejected": "Vous avez rejeté le devis"
-      }
+      "invoice": "Facture"
     }
   }
 }

@@ -19,7 +19,8 @@
     "details": "Details",
     "download": "Download",
     "approve": "Approve",
-    "reject": "Reject"
+    "reject": "Reject",
+    "pay": "Pay"
   },
   "Homepage": {
     "title": "Homepage",
@@ -76,25 +77,42 @@
     "title": "Estimate",
     "description": "Estimate the cost of your compute jobs.",
     "askForEstimate": "Ask for an estimate",
-    "placeholder": {
+    "status": {
       "estimateInProgress": {
         "title": "Estimate in progress",
         "description": "Your estimate is being calculated. Please wait."
       },
-      "estimateReady": {
-        "title": "Estimate Ready",
-        "description": "Your estimate is ready. Click here to view."
+      "estimateWaitingForApproval": {
+        "title": "Estimate waiting for approval",
+        "description": "Your estimate is waiting for your approval."
+      },
+      "estimateApproved": {
+        "waitingForPayment": {
+          "title": "Waiting for payment",
+          "description": "Your estimate has been approved and is waiting for payment."
+        },
+        "paymentPending": {
+          "title": "Payment pending",
+          "description": "Your estimate has been approved and the payment is pending."
+        },
+        "paymentSuccessful": {
+          "title": "Payment successful",
+          "description": "Your estimate has been approved and the payment has been successful."
+        },
+        "paymentFailed": {
+          "title": "Payment failed",
+          "description": "Your estimate has been approved but the payment has failed."
+        }
+      },
+      "estimateRejected": {
+        "title": "Estimate rejected",
+        "description": "Your estimate has been rejected."
       }
     },
     "details": {
       "title": "Estimate Details",
       "description": "Here, you can view the details of your estimate.",
-      "invoice": "Invoice",
-      "status": {
-        "waitingForApproval": "Waiting for approval",
-        "approved": "You have approved this estimate",
-        "rejected": "You have rejected this estimate"
-      }
+      "invoice": "Invoice"
     }
   }
 }

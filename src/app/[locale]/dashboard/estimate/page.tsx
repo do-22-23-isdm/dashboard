@@ -1,5 +1,5 @@
 import React from 'react';
-import { BadgeCheck, MessageCircleWarning, Plus } from 'lucide-react';
+import { FileText, MessageCircleWarning, Plus } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Separator } from '@shadcn/separator';
@@ -33,21 +33,70 @@ export default function Estimate() {
         estimates={[
           {
             id: 'a7688e33-1136-46cd-b930-ddfae39b0d54',
-            title: t('Estimate.placeholder.estimateInProgress.title'),
+            stateTitle: t('Estimate.status.estimateInProgress.title'),
             date: '12/03/2063',
-            description: t(
-              'Estimate.placeholder.estimateInProgress.description',
-            ),
-            icon: <MessageCircleWarning />,
+            description: t('Estimate.status.estimateInProgress.description'),
             state: 'in_progress',
           },
           {
             id: '51291483-01d2-4e56-958b-9bd7a030ceed',
-            title: t('Estimate.placeholder.estimateReady.title'),
+            stateTitle: t('Estimate.status.estimateWaitingForApproval.title'),
             date: '12/08/2063',
-            description: t('Estimate.placeholder.estimateReady.description'),
-            icon: <BadgeCheck />,
-            state: 'ready',
+            description: t(
+              'Estimate.status.estimateWaitingForApproval.description',
+            ),
+            state: 'waiting_for_approval',
+          },
+          {
+            id: '51291483-01d2-4e56-958b-9bd7a030ceed',
+            stateTitle: t(
+              'Estimate.status.estimateApproved.waitingForPayment.title',
+            ),
+            date: '12/08/2063',
+            description: t(
+              'Estimate.status.estimateApproved.waitingForPayment.description',
+            ),
+            state: 'waiting_for_payment',
+          },
+          {
+            id: '51291483-01d2-4e56-958b-9bd7a030ceed',
+            stateTitle: t(
+              'Estimate.status.estimateApproved.paymentPending.title',
+            ),
+            date: '12/08/2063',
+            description: t(
+              'Estimate.status.estimateApproved.paymentPending.description',
+            ),
+            state: 'payment_pending',
+          },
+          {
+            id: '51291483-01d2-4e56-958b-9bd7a030ceed',
+            stateTitle: t(
+              'Estimate.status.estimateApproved.paymentSuccessful.title',
+            ),
+            date: '12/08/2063',
+            description: t(
+              'Estimate.status.estimateApproved.paymentSuccessful.description',
+            ),
+            state: 'payment_succeeded',
+          },
+          {
+            id: '51291483-01d2-4e56-958b-9bd7a030ceed',
+            stateTitle: t(
+              'Estimate.status.estimateApproved.paymentFailed.title',
+            ),
+            date: '12/08/2063',
+            description: t(
+              'Estimate.status.estimateApproved.paymentFailed.description',
+            ),
+            state: 'payment_failed',
+          },
+          {
+            id: '51291483-01d2-4e56-958b-9bd7a030ceed',
+            stateTitle: t('Estimate.status.estimateRejected.title'),
+            date: '12/08/2063',
+            description: t('Estimate.status.estimateRejected.description'),
+            state: 'rejected',
           },
         ]}
       />
