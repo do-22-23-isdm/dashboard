@@ -92,7 +92,7 @@
           "description": "Votre devis a été approuvé. Veuillez payer pour commencer le calcul."
         },
         "paymentPending": {
-          "title": "Votre paiement est en attente d'approbation",
+          "title": "Votre paiement est en attente de validation",
           "description": "Votre paiement est en attente. Veuillez patienter."
         },
         "paymentSuccessful": {

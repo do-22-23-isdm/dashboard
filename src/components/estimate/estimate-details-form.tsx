@@ -7,21 +7,34 @@ import { Badge, Download, File, Handshake, X, CreditCard } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Label, Separator } from '@radix-ui/react-dropdown-menu';
 import { Input } from '../ui/input';
+import { EstimateState } from './estimate-list';
+import { getIconColorFromEstimateState } from '@/lib/utils';
 
 type Props = {
   id: string;
-  state: string;
+  stateTitle: string;
+  state: EstimateState;
   readOnlyInputs: {
     label: string;
     value: string;
   }[];
 } & React.HTMLAttributes<HTMLDivElement>;
 
-export function EstimateDetailsForm({ readOnlyInputs, id, state }: Props) {
+export function EstimateDetailsReadOnlyForm({
+  readOnlyInputs,
+  id,
+  stateTitle,
+  state,
+}: Props) {
   const t = useTranslations();
+  const isWaitingForPayment =
+    state === 'waiting_for_payment' || state === 'payment_failed';
+  const isWaitingForApproval = state === 'waiting_for_approval';
+  const isPaymentSucceeded = state === 'payment_succeeded';
+  const isEstimateInProgress = state === 'in_progress';
   return (
     <>
-      <Card>
+      <Card className="mb-2">
         <CardHeader>
           <div className="flex justify-between items-center">
             <div>
@@ -29,19 +42,26 @@ export function EstimateDetailsForm({ readOnlyInputs, id, state }: Props) {
                 {t('Estimate.title')} n°: {id}
               </CardTitle>
               <div className="flex items-center space-x-2 mt-2">
-                <Badge className={`w-3 h-3 rounded-full bg-orange-500`} />
-                <p>{state}</p>
+                <Badge
+                  className={`w-3 h-3 rounded-full bg-${getIconColorFromEstimateState(state)}`}
+                />
+                <p>{stateTitle}</p>
               </div>
             </div>
             <div className="flex space-x-2">
-              <Button className="mb-4" variant="outline">
-                <Download className="mr-2 h-4 w-4" />
-                {t('Common.download')}
-              </Button>
-              <Button className="mb-4" variant="outline">
-                <File className="mr-2 h-4 w-4" />
-                {t('Estimate.details.invoice')}
-              </Button>
+              {!isEstimateInProgress && (
+                <Button className="mb-4" variant="outline">
+                  <Download className="mr-2 h-4 w-4" />
+                  {t('Common.download')}
+                </Button>
+              )}
+
+              {isPaymentSucceeded && (
+                <Button className="mb-4" variant="outline">
+                  <File className="mr-2 h-4 w-4" />
+                  {t('Estimate.details.invoice')}
+                </Button>
+              )}
             </div>
           </div>
         </CardHeader>
@@ -59,18 +79,25 @@ export function EstimateDetailsForm({ readOnlyInputs, id, state }: Props) {
             </div>
           ))}
           <Separator className="my-4" />
-          <Button className="mb-4" variant="outline">
-            <Handshake className="mr-2 h-4 w-4 text-green-500" />
-            {t('Common.approve')}
-          </Button>
-          <Button className="mb-4 ml-2" variant="outline">
-            <X className="mr-2 h-4 w-4 text-red-500" />
-            {t('Common.reject')}
-          </Button>
-          <Button className="mb-4 ml-2" variant="outline">
-            <CreditCard className="mr-2 h-4 w-4 " />
-            {t('Common.pay')}
-          </Button>
+
+          {isWaitingForApproval && (
+            <>
+              <Button className="mb-4" variant="outline">
+                <Handshake className="mr-2 h-4 w-4 text-green-500" />
+                {t('Common.approve')}
+              </Button>
+              <Button className="mb-4 ml-2" variant="outline">
+                <X className="mr-2 h-4 w-4 text-red-500" />
+                {t('Common.reject')}
+              </Button>
+            </>
+          )}
+          {isWaitingForPayment && (
+            <Button className="mb-4 " variant="outline">
+              <CreditCard className="mr-2 h-4 w-4 " />
+              {t('Common.pay')}
+            </Button>
+          )}
         </CardContent>
       </Card>
     </>
