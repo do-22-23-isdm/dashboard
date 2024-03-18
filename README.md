@@ -17,16 +17,10 @@ There are two ways to get started:
 kind create cluster
 ```
 
-3. Then, at the root of the project:
+3. Then, at the root of the project. Port-forward is auto:
 
 ```bash
-skaffold dev
-```
-
-4. Port forward the service to access content:
-
-```bash
-kubectl port-forward services/dashboard 3000:80
+skaffold dev --port-forward=user
 ```
 
 Open [http://localhost:3000](http://localhost:3000).

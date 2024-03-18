@@ -15,7 +15,16 @@ build:
             dest: /app/
   local:
     useBuildkit: true
-manifests:
-  rawYaml:
-    - kubernetes/deployment.yaml
-    - kubernetes/svc.yaml
+deploy:
+  helm:
+    releases:
+      - name: isdm
+        chartPath: infra/charts/isdm
+        setValueTemplates:
+          image: "{{ .IMAGE_FULLY_QUALIFIED_ghcr_io_do_22_23_isdm_dashboard }}"
+portForward:
+  - resourceType: service
+    resourceName: dashboard
+    namespace: default
+    port: 80
+    localPort: 3000
