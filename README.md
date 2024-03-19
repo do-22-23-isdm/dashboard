@@ -2,6 +2,31 @@
 
 ## Getting Started
 
+There are two ways to get started:
+
+- [dev] Hot reaload in kubernetes with **skaffold**
+- [local] with **pnpm**
+
+### Skaffold
+
+1. Start by installing Skaffold using this [link](https://skaffold.dev/docs/install/).
+
+2. Set up a local Kubernetes cluster (e.g., using kind):
+
+```bash
+kind create cluster
+```
+
+3. Then, at the root of the project. Port-forward is auto:
+
+```bash
+skaffold dev --port-forward=user
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+### pnpm
+
 1. Install the dependencies:
 
 ```bash
