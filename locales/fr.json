@@ -113,6 +113,10 @@
       "title": "Détails du devis",
       "description": "Détails du devis pour les tâches de calcul.",
       "invoice": "Facture"
+    },
+    "new": {
+      "title": "Nouveau devis",
+      "description": "Faites une demande de devis pour estimer le coût de vos tâches de calcul."
     }
   }
 }

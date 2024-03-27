@@ -5,7 +5,7 @@ import { Button } from '@shadcn/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/card';
 import { Badge, Calendar, Eye, FileText, Info } from 'lucide-react';
 import { cn, getIconColorFromEstimateState } from '@/lib/utils';
-import { MessageKeys, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
 type Props = {

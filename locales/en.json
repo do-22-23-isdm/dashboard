@@ -113,6 +113,10 @@
       "title": "Estimate Details",
       "description": "Here, you can view the details of your estimate.",
       "invoice": "Invoice"
+    },
+    "new": {
+      "title": "New Estimate",
+      "description": "Here, you can create a new estimate."
     }
   }
 }

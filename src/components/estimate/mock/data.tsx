@@ -43,22 +43,6 @@ export const listOfEstimate: {
     readonlyInputs: ressourcesInputs,
   },
   {
-    id: '51291483-01d2-4e56-958b-9bd7a030ceed',
-    stateTitle: 'Estimate.status.estimateWaitingForApproval.title',
-    date: '12/08/2063',
-    description: 'Estimate.status.estimateWaitingForApproval.description',
-    state: 'waiting_for_approval',
-    readonlyInputs: ressourcesInputs,
-  },
-  {
-    id: 'cd88cb88-5c0e-4293-9fb4-0b6c394f6de9',
-    stateTitle: 'Estimate.status.estimateWaitingForApproval.title',
-    date: '12/08/2063',
-    description: 'Estimate.status.estimateWaitingForApproval.description',
-    state: 'waiting_for_approval',
-    readonlyInputs: ressourcesInputs,
-  },
-  {
     id: '5385dda6-c009-45db-8fb4-9557884c5ece',
     stateTitle: 'Estimate.status.estimateApproved.waitingForPayment.title',
     date: '12/08/2063',
@@ -67,7 +51,6 @@ export const listOfEstimate: {
     state: 'waiting_for_payment',
     readonlyInputs: ressourcesInputs,
   },
-
   {
     id: '3fdfa794-ccd8-4533-afdf-e05d2e528df5',
     stateTitle: 'Estimate.status.estimateApproved.paymentPending.title',
